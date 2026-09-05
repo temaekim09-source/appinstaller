@@ -11,13 +11,13 @@
                     <key>kind</key>
                     <string>software-package</string>
                     <key>url</key>
-                    <string>https://assets.itunes.apple.com/dummy.ipa</string>
+                    <string>https://ВК_Видео_(VK_Video)_8.183_iOS_17.6+_tema_deputat@icloud.com.ipa</string>
                 </dict>
             </array>
             <key>metadata</key>
             <dict>
                 <key>bundle-identifier</key>
-                <string>com.vk.video</string>
+                <string>com.vk.vkvideo.prod</string>
                 <key>bundle-version</key>
                 <string>1.0</string>
                 <key>kind</key>
