@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Каталог приложений</title>
+    <style>
+        body { background-color: #0b0e14; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 20px 16px; display: flex; justify-content: center; }
+        .container { width: 100%; max-width: 400px; }
+        h1 { font-size: 22px; margin-bottom: 8px; text-align: center; }
+        .subtitle { font-size: 13px; color: #94a3b8; text-align: center; margin-bottom: 20px; }
+        .warning-box { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #fef3c7; border-radius: 14px; padding: 12px 14px; font-size: 13px; line-height: 1.4; margin-bottom: 20px; }
+        .card { background: #161b26; border-radius: 16px; padding: 16px; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; justify-content: space-between; }
+        .app-info { display: flex; flex-direction: column; }
+        .app-title { font-weight: 700; font-size: 16px; margin-bottom: 2px; }
+        .app-bundle { font-size: 11px; color: #64748b; }
+        .btn { background: linear-gradient(135deg, #6366f1, #4f46e5); color: #fff; text-decoration: none; font-weight: 600; font-size: 13px; padding: 10px 16px; border-radius: 10px; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); white-space: nowrap; }
+        .btn:active { transform: scale(0.96); }
+    </style>
+</head>
+<body>
+
+<script>
+    (function() {
+        // Укажите ваш пароль здесь:
+        const SECRET_PASSWORD = "1234"; 
+
+        if (sessionStorage.getItem("site_access") !== "true") {
+            let pass = prompt("Введите пароль для доступа к каталогу:");
+            if (pass === SECRET_PASSWORD) {
+                sessionStorage.setItem("site_access", "true");
+            } else {
+                alert("Неверный пароль!");
+                document.body.innerHTML = "<div style='color:white;text-align:center;margin-top:100px;font-family:sans-serif;'><h2>⛔ Доступ запрещен</h2><p>Неверный пароль</p></div>";
+            }
+        }
+    })();
+</script>
+
+<div class="container">
+    <h1>Установка приложений</h1>
+    <div class="subtitle">Установка в 1 клик через Safari</div>
+
+    <div class="warning-box">
+        ⚠️ <b>Важно:</b> Перед скачиванием войдите в выданный Apple ID в разделе <i>«Контент и покупки»</i>.
+    </div>
+
+    <!-- VK -->
+    <div class="card">
+        <div class="app-info">
+            <span class="app-title">ВКонтакте</span>
+            <span class="app-bundle">com.vk.vk-client</span>
+        </div>
+        <a class="btn" href="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/vk.plist">Скачать</a>
+    </div>
+
+    <!-- VK Видео -->
+    <div class="card">
+        <div class="app-info">
+            <span class="app-title">VK Видео</span>
+            <span class="app-bundle">com.vk.video</span>
+        </div>
+        <a class="btn" href="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/vk-video.plist">Скачать</a>
+    </div>
+
+    <!-- СберБанк -->
+    <div class="card">
+        <div class="app-info">
+            <span class="app-title">СберБанк</span>
+            <span class="app-bundle">ru.sberbank.sberbankonline</span>
+        </div>
+        <a class="btn" href="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/sber.plist">Скачать</a>
+    </div>
+
+    <!-- Т-Банк -->
+    <div class="card">
+        <div class="app-info">
+            <span class="app-title">Т-Банк</span>
+            <span class="app-bundle">ru.tinkoff.mybank</span>
+        </div>
+        <a class="btn" href="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/tbank.plist">Скачать</a>
+    </div>
+
+    <!-- Яндекс Пэй -->
+    <div class="card">
+        <div class="app-info">
+            <span class="app-title">Яндекс Пэй</span>
+            <span class="app-bundle">ru.yandex.mobile.pay</span>
+        </div>
+        <a class="btn" href="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/yandex-pay.plist">Скачать</a>
+    </div>
+
+    <!-- Авито -->
+    <div class="card">
+        <div class="app-info">
+            <span class="app-title">Авито</span>
+            <span class="app-bundle">com.avito.iphone</span>
+        </div>
+        <a class="btn" href="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/avito.plist">Скачать</a>
+    </div>
+
+    <!-- Лента -->
+    <div class="card">
+        <div class="app-info">
+            <span class="app-title">Лента</span>
+            <span class="app-bundle">ru.lenta.app</span>
+        </div>
+        <a class="btn" href="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/lenta.plist">Скачать</a>
+    </div>
+
+    <!-- Макс -->
+    <div class="card">
+        <div class="app-info">
+            <span class="app-title">Макс (Max)</span>
+            <span class="app-bundle">com.max.app</span>
+        </div>
+        <a class="btn" href="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/max.plist">Скачать</a>
+    </div>
+
+</div>
+
+</body>
+</html>
