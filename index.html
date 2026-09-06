@@ -110,7 +110,7 @@
             opacity: 1;
         }
 
-        /* Блок кнопок поддержки внизу страницы */
+        /* Блок кнопок поддержки с яркими градиентами */
         .support-box {
             margin-top: 20px;
             display: flex;
@@ -139,32 +139,38 @@
             padding: 12px 14px;
             border-radius: 10px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             color: #ffffff;
             transition: all 0.2s ease;
+            border: none;
         }
 
-        /* Кнопка Telegram */
+        /* Яркий градиент Telegram */
         .btn-tg {
-            background: rgba(56, 189, 248, 0.15);
-            border: 1px solid rgba(56, 189, 248, 0.4);
-            color: #38bdf8;
+            background: linear-gradient(135deg, #27a7e7, #0088cc);
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
         }
         .btn-tg:active {
-            background: rgba(56, 189, 248, 0.3);
-            transform: scale(0.97);
+            transform: scale(0.96);
+            box-shadow: 0 2px 8px rgba(0, 136, 204, 0.3);
         }
 
-        /* Кнопка VK */
+        /* Яркий градиент VK */
         .btn-vk {
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(99, 102, 241, 0.4);
-            color: #818cf8;
+            background: linear-gradient(135deg, #0077ff, #0052cc);
+            box-shadow: 0 4px 15px rgba(0, 119, 255, 0.4);
         }
         .btn-vk:active {
-            background: rgba(99, 102, 241, 0.3);
-            transform: scale(0.97);
+            transform: scale(0.96);
+            box-shadow: 0 2px 8px rgba(0, 119, 255, 0.3);
+        }
+
+        /* Иконка бумажного самолетика */
+        .icon-tg {
+            width: 18px;
+            height: 18px;
+            fill: #ffffff;
         }
     </style>
 </head>
@@ -245,10 +251,13 @@
 
     <!-- Блок поддержки -->
     <div class="support-box">
-        <div class="support-title">Нужна помощь? Напишите мне:</div>
+        <div class="support-title">Нужна помощь? Напишите нам:</div>
         <div class="support-buttons">
             <a href="https://t.me/dizabled" target="_blank" class="btn-support btn-tg">
-                ✈️ Telegram
+                <svg class="icon-tg" viewBox="0 0 24 24">
+                    <path d="M1.101 12.007L22.6 3.013c.414-.158.828.183.71.611l-3.834 16.273c-.11.467-.655.656-1.025.352l-5.835-4.793-2.82 2.72c-.328.318-.876.138-.952-.308l-1.01-5.908-5.733-1.854c-.45-.146-.448-.791 0-.934zM9.82 13.91l1.43 4.22 1.83-3.66 6.84-8.88-10.1 8.32z"/>
+                </svg>
+                Telegram
             </a>
             <a href="https://vk.com/tema_deputat" target="_blank" class="btn-support btn-vk">
                 💬 ВКонтакте
