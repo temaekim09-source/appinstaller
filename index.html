@@ -91,13 +91,38 @@
             transition: all 0.2s ease;
         }
         .btn:active { transform: scale(0.97); opacity: 0.9; }
+        /* Всплывающее уведомление */
+.toast {
+    position: fixed;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(34, 197, 94, 0.95); /* Зеленый цвет */
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 9999;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Класс для показа уведомления */
+.toast.show {
+    bottom: 30px;
+}
     </style>
 </head>
 <body>
 
 <script>
+    /* 1. ПРОВЕРКА ПАРОЛЯ ПРИ ВХОДЕ */
     (function() {
-        const SECRET_PASSWORD = "deputat70356"; 
+        const SECRET_PASSWORD = "deputat70356"; // Ваш пароль к сайту
         if (sessionStorage.getItem("site_access") !== "true") {
             let pass = prompt("Введите пароль для доступа к каталогу:");
             if (pass === SECRET_PASSWORD) {
@@ -109,14 +134,24 @@
         }
     })();
 
+    /* 2. ПУНКТ 3: СКАЧИВАНИЕ И УВЕДОМЛЕНИЕ */
     function downloadApp() {
         const select = document.getElementById('appSelect');
         const url = select.value;
         if (url) {
             window.location.href = url;
+            showToast();
         } else {
             alert('Пожалуйста, выберите приложение из списка!');
         }
+    }
+
+    function showToast() {
+        const toast = document.getElementById('toastNotification');
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 4000);
     }
 </script>
 
@@ -145,6 +180,8 @@
         <a class="btn" href="javascript:void(0);" onclick="downloadApp()">Установить</a>
     </div>
 </div>
-
+<div id="toastNotification" class="toast">
+    ✅ Загрузка начата! Проверьте экран "Домой"
+</div>
 </body>
 </html>
