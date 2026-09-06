@@ -14,7 +14,7 @@
             display: flex; 
             justify-content: center; 
         }
-        .container { width: 100%; max-width: 400px; position: relative; }
+        .container { width: 100%; max-width: 400px; }
         
         h1 { 
             font-size: 22px; 
@@ -89,32 +89,23 @@
         }
         .btn:active { transform: scale(0.97); opacity: 0.9; }
 
-        /* Зелёное всплывающее уведомление */
+        /* Зелёное уведомление под кнопкой */
         .toast {
             display: none;
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(16, 185, 129, 0.95);
+            background: rgba(16, 185, 129, 0.15);
             border: 1px solid #34d399;
-            color: #ffffff;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-size: 14px;
+            color: #6ee7b7;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 13px;
             font-weight: 600;
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
-            z-index: 1000;
             text-align: center;
-            width: 80%;
-            max-width: 320px;
-            backdrop-filter: blur(8px);
+            line-height: 1.4;
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
         }
     </style>
 </head>
 <body>
-
-<div id="toast" class="toast">🚀 Загрузка началась! Проверьте экран «Домой»</div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -139,11 +130,10 @@
         const select = document.getElementById('appSelect');
         const url = select.value;
         if (url) {
-            // Показываем зеленое уведомление
+            // Показываем зелёную плашку под кнопкой
             const toast = document.getElementById('toast');
             toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 4000);
-
+            
             // Переходим по ссылке установки
             window.location.assign(url);
         } else {
@@ -175,6 +165,8 @@
         </select>
 
         <button type="button" class="btn" onclick="startInstallation()">Установить</button>
+
+        <div id="toast" class="toast">🚀 Загрузка началась! Проверьте главный экран устройства.</div>
     </div>
 </div>
 
