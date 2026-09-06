@@ -121,41 +121,36 @@
 
 <script>
     /* 1. ПРОВЕРКА ПАРОЛЯ ПРИ ВХОДЕ */
-    (function() {
-        const SECRET_PASSWORD = "deputat70356"; // Ваш пароль к сайту
-        if (sessionStorage.getItem("site_access") !== "true") {
+    document.addEventListener("DOMContentLoaded", function() {
+        const SECRET_PASSWORD = "deputat70356"; 
+        const appContainer = document.getElementById("mainApp");
+
+        if (sessionStorage.getItem("site_access") === "true") {
+            appContainer.style.display = "block";
+        } else {
             let pass = prompt("Введите пароль для доступа к каталогу:");
             if (pass === SECRET_PASSWORD) {
                 sessionStorage.setItem("site_access", "true");
+                appContainer.style.display = "block";
             } else {
                 alert("Неверный пароль!");
                 document.body.innerHTML = "<div style='color:white;text-align:center;margin-top:100px;font-family:sans-serif;'><h2>⛔ Доступ запрещен</h2><p>Неверный пароль</p></div>";
             }
         }
-    })();
+    });
 
-    /* 2. ПУНКТ 3: СКАЧИВАНИЕ И УВЕДОМЛЕНИЕ */
     function downloadApp() {
         const select = document.getElementById('appSelect');
         const url = select.value;
         if (url) {
             window.location.href = url;
-            showToast();
         } else {
             alert('Пожалуйста, выберите приложение из списка!');
         }
     }
-
-    function showToast() {
-        const toast = document.getElementById('toastNotification');
-        toast.classList.add('show');
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 4000);
-    }
 </script>
 
-<div class="container">
+<div class="container" id="mainApp" style="display: none;">
     <h1>Установка удалённых приложений</h1>
     <div class="subtitle">Установка нужных приложений без лишних хлопот</div>
 
