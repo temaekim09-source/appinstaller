@@ -109,13 +109,70 @@
             display: block;
             opacity: 1;
         }
+
+        /* Блок кнопок поддержки внизу страницы */
+        .support-box {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+        }
+
+        .support-title {
+            font-size: 13px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .support-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-support {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        /* Кнопка Telegram */
+        .btn-tg {
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+        }
+        .btn-tg:active {
+            background: rgba(56, 189, 248, 0.3);
+            transform: scale(0.97);
+        }
+
+        /* Кнопка VK */
+        .btn-vk {
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            color: #818cf8;
+        }
+        .btn-vk:active {
+            background: rgba(99, 102, 241, 0.3);
+            transform: scale(0.97);
+        }
     </style>
 </head>
 <body>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const SECRET_PASSWORD = "deputat09050702"; 
+        const SECRET_PASSWORD = "deputat70356"; 
         const appContainer = document.getElementById("mainApp");
 
         if (sessionStorage.getItem("site_access") === "true") {
@@ -184,6 +241,19 @@
         <button type="button" class="btn" onclick="startInstallation()">Установить</button>
 
         <div id="toast" class="toast">🚀 Загрузка началась! Проверьте главный экран устройства.</div>
+    </div>
+
+    <!-- Блок поддержки -->
+    <div class="support-box">
+        <div class="support-title">Нужна помощь? Напишите нам:</div>
+        <div class="support-buttons">
+            <a href="https://t.me/dizabled" target="_blank" class="btn-support btn-tg">
+                ✈️ Telegram
+            </a>
+            <a href="https://vk.com/tema_deputat" target="_blank" class="btn-support btn-vk">
+                💬 ВКонтакте
+            </a>
+        </div>
     </div>
 </div>
 
