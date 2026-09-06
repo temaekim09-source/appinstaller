@@ -109,6 +109,17 @@
             display: block;
             opacity: 1;
         }
+        body {
+    /* Фиксируем фон, чтобы он не дергался при скролле на iPhone */
+    min-height: 100vh;
+    margin: 0;
+    
+    /* Темный премиальный градиент */
+    background: linear-gradient(135deg, #0f0c20 0%, #15102a 50%, #06040a 100%);
+    background-attachment: fixed;
+    
+    color: #ffffff; /* Цвет текста на фоне */
+}
     </style>
 </head>
 <body>
