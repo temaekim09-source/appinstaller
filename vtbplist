@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>items</key>
+  <array>
+    <dict>
+      <key>assets</key>
+      <array>
+        <dict>
+          <key>kind</key>
+          <string>software-package</string>
+          <key>url</key>
+          <string><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>items</key>
+  <array>
+    <dict>
+      <key>assets</key>
+      <array>
+        <dict>
+          <key>kind</key>
+          <string>software-package</string>
+          <key>url</key>
+          <string>https://github.com/temaekim09-source/appinstaller/releases/download/v1.0/_._.VK_Video._8.183_iOS_17.6%2B_tema_deputat@icloud.com.ipa</string>
+        </dict>
+      </array>
+      <key>metadata</key>
+      <dict>
+        <key>bundle-identifier</key>
+        <string>com.sm.FlowTime</string>
+        <key>bundle-version</key>
+        <string>1.0</string>
+        <key>kind</key>
+        <string>software</string>
+        <key>title</key>
+            <string>VTB(Сириус)</string>
+      </dict>
+    </dict>
+  </array>
+</dict>
+</plist></string>
+        </dict>
+      </array>
+      <key>metadata</key>
+      <dict>
+        <key>bundle-identifier</key>
+        <string>com.vk.vkvideo.prod</string>
+        <key>bundle-version</key>
+        <string>1.0</string>
+        <key>kind</key>
+        <string>software</string>
+        <key>title</key>
+        <string>VK Video</string>
+      </dict>
+    </dict>
+  </array>
+</dict>
+</plist>
