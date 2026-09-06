@@ -91,36 +91,11 @@
             transition: all 0.2s ease;
         }
         .btn:active { transform: scale(0.97); opacity: 0.9; }
-        /* Всплывающее уведомление */
-.toast {
-    position: fixed;
-    bottom: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(34, 197, 94, 0.95); /* Зеленый цвет */
-    color: #ffffff;
-    padding: 12px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 9999;
-    text-align: center;
-    white-space: nowrap;
-}
-
-/* Класс для показа уведомления */
-.toast.show {
-    bottom: 30px;
-}
     </style>
 </head>
 <body>
 
 <script>
-    /* 1. ПРОВЕРКА ПАРОЛЯ ПРИ ВХОДЕ */
     document.addEventListener("DOMContentLoaded", function() {
         const SECRET_PASSWORD = "deputat70356"; 
         const appContainer = document.getElementById("mainApp");
@@ -166,18 +141,15 @@
             <option value="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/appinstaller/max.plist">Макс (Max)</option>
             <option value="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/appinstaller/vk-video.plist">VK Видео</option>
             <option value="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/appinstaller/sber.plist">СберБанк</option>
+            <option value="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/appinstaller/avito.plist">Авито</option>
             <option value="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/appinstaller/tbank.plist">Т-Банк</option>
             <option value="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/appinstaller/lenta.plist">Лента</option>
             <option value="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/appinstaller/yandex-pay.plist">Яндекс Пэй</option>
-            <option value="itms-services://?action=download-manifest&url=https://temaekim09-source.github.io/appinstaller/avito.plist">Авито</option>
-            
         </select>
 
         <a class="btn" href="javascript:void(0);" onclick="downloadApp()">Установить</a>
     </div>
 </div>
-<div id="toastNotification" class="toast">
-    ✅ Загрузка начата! Проверьте экран "Домой"
-</div>
+
 </body>
 </html>
